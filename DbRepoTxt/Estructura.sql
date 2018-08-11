@@ -28,6 +28,4 @@ CodPrestamo INTEGER NOT NULL,
 Entregado BOOLEAN NOT NULL,
 FechaHora TIMESTAMP NOT NULL,
 FOREIGN KEY (CodMonitor) REFERENCES Monitor(CodMonitor),
-FOREIGN KEY (CodEstudianteEquipo) REFERENCES Estudiante_Equipo(CodEstudianteEquipo))
-
-
+FOREIGN KEY (CodEstudianteEquipo) REFERENCES Estudiante_Equipo(CodEstudianteEquipo));

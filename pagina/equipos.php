@@ -12,7 +12,7 @@ include_once('inc/menu.php');
 $dgProd = new \C_DataGrid('SELECT * FROM Equipo', 'CodEquipo', 'Equipos');
 $dgProd->set_col_hidden('CodEquipo', false);
 $dgProd->enable_autowidth(true)->set_dimension('auto', '200px')->set_pagesize(100);
-$dgProd->set_col_title('CodBarras', 'Codigo de Barras');
+$dgProd->set_col_title('CodBarras', 'Código de Barras');
 $dgProd->set_col_title('NombreEquipo', 'Nombre');
 $dgProd->set_col_title('Descripcion', 'Descripción');
 $dgProd->display();

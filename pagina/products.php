@@ -4,7 +4,7 @@ include_once("phpGrid/conf.php");
 include_once('inc/head.php');
 ?>
 
-<h1>My Inventory Manager</h1>
+<h1>Laboratorio IUE</h1>
 
 <?php
 $_GET['currentPage'] = 'products';
@@ -12,13 +12,13 @@ include_once('inc/menu.php');
 ?>
 
 <?php
-$dgProd = new \C_DataGrid('SELECT * FROM Equipo', 'CodEquipo', 'Equipo');
+$dgProd = new \C_DataGrid('SELECT * FROM Equipo', 'CodEquipo', 'Equipos');
 $dgProd->set_col_hidden('CodEquipo', false);
 $dgProd->enable_autowidth(true)->set_dimension('auto', '200px')->set_pagesize(100);
 
-$dgProd -> set_col_tittle('CodBarras', 'Codigo de Barras');
-$dgProd -> set_col_tittle('NombreEquipo', 'Nombre');
-$dgProd -> set_col_tittle('Descripcion', 'Descripción');
+$dgProd->set_col_title('CodBarras', 'Codigo de Barras');
+$dgProd->set_col_title('NombreEquipo', 'Nombre');
+$dgProd->set_col_title('Descripcion', 'Descripción');
 /*
 
 $dgProd->set_col_title('ProductName', 'Name');
@@ -69,18 +69,19 @@ function(status, rowid)
 
 }
 ONGRIDLOADCOMPLETE;
+
 $dgProd->add_event("jqGridLoadComplete", $onGridLoadComplete);
 $dgProd->enable_edit('FORM');
 
 // Purchases detail grid
-$dgPur = new C_DataGrid('SELECT id, PurchaseDate, ProductId, NumberReceived, SupplierId FROM purchases', 'id', 'purchases');
+$dgPur = new \C_DataGrid('SELECT id, PurchaseDate, ProductId, NumberReceived, SupplierId FROM purchases', 'id', 'purchases');
 $dgPur->set_col_hidden('id', false)->set_caption('Incoming Purchases');
 $dgPur->set_col_edittype('ProductId', 'select', "select id, ProductLabel from products");
 $dgPur->set_col_edittype('SupplierId', 'select', "select id, supplier from suppliers");
 $dgPur->set_dimension('800px');
 
 // Orders detail grid
-$dgOrd = new C_DataGrid('SELECT id, OrderDate, ProductId, NumberShipped, First, Last FROM orders', 'id', 'orders');
+$dgOrd = new \C_DataGrid('SELECT id, OrderDate, ProductId, NumberShipped, First, Last FROM orders', 'id', 'orders');
 $dgOrd->set_sortname('OrderDate', 'DESC')->set_caption('Outgoing Orders');
 $dgOrd->set_col_hidden('id', false);
 $dgOrd->set_col_edittype('ProductId', 'select', "select id, ProductLabel from products");
@@ -88,7 +89,8 @@ $dgOrd->set_dimension('800px');
 
 $dgProd->set_masterdetail($dgPur, 'ProductId', 'id');
 $dgProd->set_masterdetail($dgOrd, 'ProductId', 'id');
-$dgProd->display();*/
+*/
+$dgProd->display();
 ?>
 
 <span style="background-color:gold">______</span> -- Indicating inventory that needs reorder.<br />

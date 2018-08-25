@@ -1,5 +1,4 @@
 <?php
-use phpGrid\C_DataGrid;
 
 include_once("phpGrid/conf.php");
 include_once('inc/head.php');
@@ -13,9 +12,14 @@ include_once('inc/menu.php');
 ?>
 
 <?php
-$dgProd = new C_DataGrid('SELECT * FROM products', 'id', 'products');
-$dgProd->set_col_hidden('id', false);
+$dgProd = new \C_DataGrid('SELECT * FROM Equipo', 'CodEquipo', 'Equipo');
+$dgProd->set_col_hidden('CodEquipo', false);
 $dgProd->enable_autowidth(true)->set_dimension('auto', '200px')->set_pagesize(100);
+
+$dgProd -> set_col_tittle('CodBarras', 'Codigo de Barras');
+$dgProd -> set_col_tittle('NombreEquipo', 'Nombre');
+$dgProd -> set_col_tittle('Descripcion', 'Descripción');
+/*
 
 $dgProd->set_col_title('ProductName', 'Name');
 $dgProd->set_col_title('PartNumber', 'Part Number');
@@ -54,12 +58,12 @@ function(status, rowid)
         var inventoryOnHand = $("#products").jqGrid("getCell", rowId, "InventoryOnHand");
         var minimumRequired = $("#products").jqGrid("getCell", rowId, "MinimumRequired");
 
-        // compare two dates and set custom display in another field "status" 
+        // compare two dates and set custom display in another field "status"
         console.log(inventoryOnHand + " | " + minimumRequired);
         if(parseInt(inventoryOnHand) < parseInt(minimumRequired)){
-            
-            $("#products").jqGrid("setCell", rowId, "PartNumber", '', {'background-color':'gold'}); 
-                
+
+            $("#products").jqGrid("setCell", rowId, "PartNumber", '', {'background-color':'gold'});
+
         }
     }
 
@@ -84,7 +88,7 @@ $dgOrd->set_dimension('800px');
 
 $dgProd->set_masterdetail($dgPur, 'ProductId', 'id');
 $dgProd->set_masterdetail($dgOrd, 'ProductId', 'id');
-$dgProd->display();
+$dgProd->display();*/
 ?>
 
 <span style="background-color:gold">______</span> -- Indicating inventory that needs reorder.<br />

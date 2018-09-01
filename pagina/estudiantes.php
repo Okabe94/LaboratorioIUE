@@ -11,15 +11,17 @@ $_GET['currentPage'] = 'estudiantes';
 include_once('inc/menu.php');
 $dgProd = new \C_DataGrid('SELECT * FROM Estudiante', 'CodEstudiante', 'Estudiantes');
 $dgProd->set_col_hidden('CodEstudiante', false);
-$dgProd->enable_autowidth(true)->set_dimension('auto', '200px')->set_pagesize(100);
 $dgProd->set_col_title('CodCarne', 'Número de Carné');
 $dgProd->set_col_title('NombreEstudiante', 'Nombre');
 $dgProd->set_col_title('PlanAcademico', 'Plan Académico ');
+
+#Properties
+$dgProd->set_dimension('auto','auto', True);
+$dgProd->set_pagesize(100);
+$dgProd->enable_search(True);
+$dgProd->enable_autoheight(True);
 $dgProd->display();
 ?>
-
-<span style="background-color:gold">______</span> -- Indicating inventory that needs reorder.<br />
-<span style="background-color:#DCDCDC">______</span> -- Negative inventory on hand!
 
 <style>
 .number-columns{

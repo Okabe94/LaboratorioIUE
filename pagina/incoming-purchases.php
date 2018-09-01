@@ -29,7 +29,7 @@ $dgPur->set_pagesize(100);
 
 $dgPur->set_col_width('PurchaseDate', '50px');
 $dgPur->set_col_width('NumberReceived', '35px');
-
+ 
 $dgPur -> set_group_properties('ProductId', false, true, true, false);
 $dgPur -> set_group_summary('NumberReceived','sum');
 

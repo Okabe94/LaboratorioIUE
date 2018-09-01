@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 body {
-   padding: 0 15px;
-   margin: 0 15px;
-   font-family: lato, sans-serif, arial;
+    padding: 0px 15px;
+    margin: 0px 15px;
+    font-family: lato, sans-serif, arial;
 }
 .ui-jqgrid-htable th,
-.ui-jqgrid tr.jqgrow td{ 
-    text-transform: capitalize; 
+.ui-jqgrid tr.jqgrow td{
+    text-transform: capitalize;
 }
 .ui-jqgrid-htable th div{
     font-weight: bold;
@@ -17,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #3FC300;
+    background-color: #f0ebe4;
 }
 
 #menu ul li {
@@ -26,15 +26,14 @@ body {
 
 #menu  ul li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 #menu  ul li a:hover,
 #menu .active {
-    background-color: #ddd;
-    color:black;
+    background-color: #f0a808;
 }
 .footer {
   position: fixed;
@@ -42,7 +41,7 @@ body {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #efefef;
+  background-color: #d9d5cf;
   text-align: center;
 }
 .ui-tabs-panel #subtitle{
